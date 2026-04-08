@@ -82,6 +82,11 @@ int main(){
     Chen_file (folderD,"abc.docx",3667.0,{2018,7,30,15,36});
     Chen_file (folderD,"anh.jpg",12345.0,{2022,12,22,22,22});
     Chen_file (folderD,"fdjif.pdf",2142.0,{2024,5,30,4,12});
-    cout << "Kich thuoc: " << tinh_size(folderD) << "MB" << endl;
+    Chen_file (folderD,"dsd.pptx",19203.0,{2006,10,16,4,05});
+
+    cout << "Kich thuoc file: " << tinh_size(folderD) << "MB" << endl;
+    sao_luu(folderD);
+    cout << "Kich thuoc file duoc sao luu: " << tinh_size(folderD) << "MB" << endl;
     return 0;
+
 }
