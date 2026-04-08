@@ -18,7 +18,7 @@ bool time_compare (time_created t1, time_created t2){
     if (t1.month != t2.month) return t1.month < t2.month;
     if (t1.date != t2.date) return t1.date < t2.date;
     if (t1.hour != t2.hour) return t1.hour < t2.hour;
-    if (t1.minute != t2.minute) return t1.minute < t2.minute;
+    return t1.minute < t2.minute;
 }
 Node* createnode(string n, float s, time_created t){
     Node* newNode = new Node;
@@ -36,7 +36,7 @@ void Chen_file (Node* &H, string n, float s, time_created t){
         return;
     }
     Node* hientai = H;
-    while (H != NULL && time_compare(hientai ->next -> data.t,t)){
+    while (hientai -> next != NULL && time_compare(hientai ->next -> data.t,t)){
         hientai = hientai -> next;
     }
     newNode -> next = hientai -> next;
@@ -80,5 +80,8 @@ void sao_luu(Node* &H){
 int main(){
     Node* folderD = NULL;
     Chen_file (folderD,"abc.docx",3667.0,{2018,7,30,15,36});
-    Chen_file (H,);
+    Chen_file (folderD,"anh.jpg",12345.0,{2022,12,22,22,22});
+    Chen_file (folderD,"fdjif.pdf",2142.0,{2024,5,30,4,12});
+    cout << "Kich thuoc: " << tinh_size(folderD) << "MB" << endl;
+    return 0;
 }
